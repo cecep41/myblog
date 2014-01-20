@@ -16,8 +16,6 @@ gem 'slim-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
-  gem 'haml2slim'
-  gem 'html2haml'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
