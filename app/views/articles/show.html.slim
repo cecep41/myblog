@@ -1,21 +1,24 @@
 p#notice = notice
 
-p
-  strong Title:
+h2
   = @article.title
+- if user_signed_in? && request.subdomain.eql?(current_user.name)
+  p
+    => link_to 'Edit', edit_article_path(@article)
+    => link_to 'Delete', @article, data: {:confirm => 'Are you sure?'}, :method => :delete
+    => link_to 'Back', articles_path
 p
-  strong Body:
+  = @article.created_at
+p
   = @article.body
-p
-  strong Publish:
-  = @article.publish
-p
-  strong Publish at:
-  = @article.publish_at
-p
-  strong User:
-  = @article.user
 
-= link_to 'Edit', edit_article_path(@article)
-'|
-= link_to 'Back', articles_path
+.comments
+  h2 Comments
+  - if user_signed_in?
+    = render :partial => 'comments/form', :locals => { :comment => @new_comment }
+  - else
+    h4 = "Ups sorry you cant comment. Have account? please #{link_to 'Sign In', login_path} or #{link_to 'Sign up', signup_path} ".html_safe
+
+  = render :partial => 'comments/comment', :collection => @comments, :as => :comment
+  = link_to 'Back', blog_path
+

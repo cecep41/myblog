@@ -1,12 +1,10 @@
 = simple_form_for(@article) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :title
-    = f.input :body
-    = f.input :publish
-    = f.input :publish_at
-    = f.association :user
-
-  .form-actions
-    = f.button :submit
+  = f.input :title
+  br
+  = f.input :body
+  br
+  = f.input :state, as: :boolean, label: 'Publish?'
+  br
+  = f.button :submit

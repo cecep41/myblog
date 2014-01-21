@@ -1,2 +1,9 @@
-h1 Blog#index
-p Find me in app/views/blog/index.html.slim
+h1 #{request.subdomain.capitalize} Blog
+
+- @articles.each do |article|
+  h2 =link_to article.title, article_path(article)
+  p = article.body
+  br
+  hr
+  br
+

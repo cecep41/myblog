@@ -4,3 +4,8 @@
     div class="alert alert-#{name == :notice ? "success" : "danger"}"
       button.close[type="button" data-dismiss="alert" aria-hidden="true"] ×
       = content_tag :div, msg, :id => "flash_#{name}"
+
+- unless params[:notice].blank?
+  div class="alert alert-danger"
+    button.close[type="button" data-dismiss="alert" aria-hidden="true"] ×
+    = content_tag :div, params[:notice], :id => "flash_danger"

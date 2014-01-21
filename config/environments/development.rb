@@ -25,13 +25,15 @@ Myblog::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true  
+  config.assets.debug = true
 
     config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
-      :port      => 25,
-      :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_APIKEY"]
+      address: "smtp.mandrillapp.com",
+      port: 587,
+      domain: "localhost:3000",
+      enable_starttls_auto: :true,
+      user_name: "cecep@41studio.com",
+      password: "swkMU9Y-lJNpXYb0IPCNAQ"
     }
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
