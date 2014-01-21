@@ -1,4 +1,5 @@
-h3 Home
-- @users.each do |user|
+.jumbotron.form-centered
+  h1 Just a Blogging Tools
+  p.lead This is a simple web tool for make blogging more fun and easy to use than ever.
   p
-    | User: #{link_to user.email, user}
+    = link_to 'Sign up today', new_user_registration_path, class: 'btn btn-lg btn-success', role: "button"

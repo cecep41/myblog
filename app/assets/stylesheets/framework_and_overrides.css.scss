@@ -22,7 +22,7 @@ img {
   @extend .col-md-6;
   }
 .form-centered {
-  @extend .col-md-6;
+  @extend .col-md-12;
   @extend .text-center;
   }
 .submit {
@@ -34,10 +34,10 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  // background-color: #eee;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 40px; // accommodate the navbar
   }
 section {
   @extend .row;
@@ -73,4 +73,9 @@ section {
 }
 #error_explanation h2 {
   font-size: 16px;
+}
+
+.main-container {
+  @extend .container;
+  width: 750px;
 }

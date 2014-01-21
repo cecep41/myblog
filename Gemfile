@@ -9,7 +9,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'devise'
+gem 'carrierwave'
+gem 'kaminari'
+gem 'friendly_id'
+gem 'ckeditor'
 gem 'figaro'
+gem 'state_machine'
 gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
@@ -19,6 +24,7 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'pry'
 end
 group :production do
   gem 'thin'
