@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @user = User.where(:name => request.subdomain).first
-    @articles = current_user.articles.all
+    @articles = current_user.articles.order(:created_at).page(params[:page]).per(10)
   end
 
   # GET /articles/1

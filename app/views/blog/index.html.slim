@@ -1,9 +1,9 @@
 h1 #{request.subdomain.capitalize} Blog
-
+hr
 - @articles.each do |article|
   h2 =link_to article.title, article_path(article)
   p = article.body
-  br
   hr
-  br
+
+= paginate @articles
 
